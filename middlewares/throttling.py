@@ -26,6 +26,7 @@ class ThrottlingMiddleware(BaseMiddleware):
         else:
             limit = self.rate_limit
             key = f"{self.prefix}_message"
+
         try:
             await dispatcher.throttle(key, rate=limit)
         except Throttled as t:
