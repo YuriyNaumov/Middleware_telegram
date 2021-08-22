@@ -6,7 +6,6 @@ from aiogram.dispatcher.middlewares import BaseMiddleware
 
 from data.config import banned_users
 
-
 class BigBrother(BaseMiddleware):
     #1
     async def on_pre_process_update(self, update:types.Update, data:dict):
@@ -53,5 +52,3 @@ class BigBrother(BaseMiddleware):
         logging.info(f"8. Post Process Update, {data=}, {data_from_handler=}")
         logging.info("__________________Конец_______________________")
 
-    async def on_pre_process_callback_query(self, cq:types.callback_query, data:dict):
-        await cq.answer()

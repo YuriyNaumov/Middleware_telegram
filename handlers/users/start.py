@@ -23,7 +23,7 @@ async def bot_start(message: types.Message):
 @rate_limit(5, key="start")
 @dp.message_handler(CommandStart(),SomeF())
 async def bot_start(message: types.Message, middleware_data, from_filter, user:User):
-    await message.answer(f"Привет, {message.from_user.full_name}!\n {middleware_data=} \n {from_filter=}",
+    await message.answer(f"<b>Привет</b>, {message.from_user.full_name}!\n {middleware_data=} \n {from_filter=}",
                          reply_markup = InlineKeyboardMarkup(
                                 inline_keyboard=[
                                     [
